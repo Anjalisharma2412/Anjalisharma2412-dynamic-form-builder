@@ -47,7 +47,7 @@ function UserPage() {
           boxSizing: "border-box",
         }}
       >
-        {/* Header */}
+
         <div style={{ marginBottom: "1.5rem" }}>
           <h1 style={{ margin: "0 0 4px", fontSize: "22px", color: "#111" }}>
             User Dashboard
@@ -57,7 +57,6 @@ function UserPage() {
           </p>
         </div>
 
-        {/* Content */}
         {loading ? (
           <p style={{ color: "#6b7280" }}>Loading forms...</p>
         ) : forms.length === 0 ? (

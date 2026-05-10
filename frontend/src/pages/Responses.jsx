@@ -48,7 +48,6 @@ function Responses() {
           boxSizing: "border-box",
         }}
       >
-        {/* Header */}
         <div style={{ marginBottom: "1.5rem" }}>
           <button
             onClick={() => navigate(-1)}
@@ -73,7 +72,6 @@ function Responses() {
           </p>
         </div>
 
-        {/* Content */}
         {loading ? (
           <p style={{ color: "#6b7280" }}>Loading responses...</p>
         ) : responses.length === 0 ? (
@@ -100,7 +98,6 @@ function Responses() {
                   padding: "14px 16px",
                 }}
               >
-                {/* Submission Header */}
                 <div
                   style={{
                     display: "flex",
@@ -134,7 +131,6 @@ function Responses() {
                   </span>
                 </div>
 
-                {/* Response Data */}
                 <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
                   {Object.entries(response.responseData).map(([key, value]) => (
                     <div

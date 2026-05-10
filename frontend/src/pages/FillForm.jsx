@@ -7,7 +7,6 @@ function FillForm() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // URL mein ?role=admin hai toh admin hai
   const isAdmin = new URLSearchParams(location.search).get("role") === "admin";
 
   const [form, setForm] = useState(null);
@@ -69,7 +68,6 @@ function FillForm() {
     boxSizing: "border-box",
   };
 
-  // Loading state
   if (!form) {
     return (
       <div style={pageWrapper}>
@@ -90,7 +88,6 @@ function FillForm() {
     );
   }
 
-  // Success state
   if (submitted) {
     return (
       <div style={pageWrapper}>
@@ -159,7 +156,7 @@ function FillForm() {
           boxSizing: "border-box",
         }}
       >
-        {/* Header */}
+
         <div style={{ marginBottom: "1.5rem" }}>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "1rem" }}>
             <button
@@ -177,7 +174,6 @@ function FillForm() {
               ← Back
             </button>
 
-            {/* Admin badge */}
             {isAdmin && (
               <span
                 style={{
@@ -204,7 +200,6 @@ function FillForm() {
           )}
         </div>
 
-        {/* Fields */}
         <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
           {form.fields.map((field) => (
             <div
@@ -227,7 +222,6 @@ function FillForm() {
                 {field.label}
               </p>
 
-              {/* Text */}
               {field.fieldType === "text" && (
                 <input
                   type="text"
@@ -239,7 +233,6 @@ function FillForm() {
                 />
               )}
 
-              {/* Dropdown */}
               {field.fieldType === "dropdown" && (
                 <select
                   value={responses[field.label] || ""}
@@ -254,7 +247,6 @@ function FillForm() {
                 </select>
               )}
 
-              {/* Checkbox */}
               {field.fieldType === "checkbox" && (
                 <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
                   {field.options.map((opt, i) => (
@@ -289,7 +281,6 @@ function FillForm() {
                 </div>
               )}
 
-              {/* Radio */}
               {field.fieldType === "radio" && (
                 <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
                   {field.options.map((opt, i) => (
@@ -320,7 +311,6 @@ function FillForm() {
           ))}
         </div>
 
-        {/* Submit Button — admin ko nahi dikhega */}
         {!isAdmin && (
           <div style={{ borderTop: "1px solid #e5e7eb", paddingTop: "1.25rem", marginTop: "1.5rem" }}>
             <button
